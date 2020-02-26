@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parsetagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parsetagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,6 +139,40 @@
                                             <outlet property="usernameLabel" destination="ivi-es-SaR" id="E5H-mX-rW8"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="66" id="sut-cV-rno" customClass="CommentCell" customModule="Parsetagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="442" width="414" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sut-cV-rno" id="5JN-wm-udv">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6go-Py-BGV">
+                                                    <rect key="frame" x="16" y="8" width="57" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHt-oC-f0i">
+                                                    <rect key="frame" x="81" y="8" width="75" height="50"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VHt-oC-f0i" firstAttribute="leading" secondItem="6go-Py-BGV" secondAttribute="trailing" constant="8" id="5xW-QU-tGM"/>
+                                                <constraint firstAttribute="bottom" secondItem="6go-Py-BGV" secondAttribute="bottom" constant="8" id="S0r-ct-zaR"/>
+                                                <constraint firstItem="6go-Py-BGV" firstAttribute="top" secondItem="5JN-wm-udv" secondAttribute="top" constant="8" id="aYJ-u1-oT7"/>
+                                                <constraint firstItem="6go-Py-BGV" firstAttribute="leading" secondItem="5JN-wm-udv" secondAttribute="leading" constant="16" id="eXT-Y6-F53"/>
+                                                <constraint firstAttribute="bottom" secondItem="VHt-oC-f0i" secondAttribute="bottom" constant="8" id="etV-3z-UvG"/>
+                                                <constraint firstItem="VHt-oC-f0i" firstAttribute="top" secondItem="5JN-wm-udv" secondAttribute="top" constant="8" id="uWn-Sk-sSM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cnameLabel" destination="6go-Py-BGV" id="yiy-ot-UXd"/>
+                                            <outlet property="commentLabel" destination="VHt-oC-f0i" id="qFC-58-3Af"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -146,6 +180,11 @@
                         <viewLayoutGuide key="safeArea" id="FeN-ft-wqf"/>
                     </view>
                     <navigationItem key="navigationItem" id="Kjl-iv-gdp">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="C6a-4N-CRU">
+                            <connections>
+                                <action selector="onLogout:" destination="nw0-2A-oFu" id="baX-3X-4cA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="insta_camera_btn" id="1gz-9x-H9C">
                             <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -212,7 +251,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UWb-6o-4Tv">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DDa-HB-HN8" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="DDa-HB-HN8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OxY-iU-ICd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
